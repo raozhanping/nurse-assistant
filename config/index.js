@@ -43,6 +43,7 @@ const config = {
     }
   },
   h5: {
+    // esnextModules: ['taro-ui-vue3'],
     publicPath: '/',
     staticDirectory: 'static',
     postcss: {
@@ -58,6 +59,9 @@ const config = {
           generateScopedName: '[name]__[local]___[hash:base64:5]'
         }
       }
+    },
+    webpackChain(chain) {
+      chain.resolve.alias.set('@tarojs/components$', '@tarojs/components/dist-h5/vue3/index.js')
     }
   }
 }

@@ -1,6 +1,8 @@
 import { createApp } from 'vue'
 import store from './store'
 
+import 'taro-ui-vue3/dist/style/index.scss'
+
 import './app.scss'
 
 const App = createApp({

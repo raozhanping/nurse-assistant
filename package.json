@@ -13,7 +13,7 @@
     "build:swan": "taro build --type swan",
     "build:alipay": "taro build --type alipay",
     "build:tt": "taro build --type tt",
-    "build:h5": "taro build --type h5",
+    "build:h5": "node ./config/h5-build-script.js && taro build --type h5",
     "build:rn": "taro build --type rn",
     "build:qq": "taro build --type qq",
     "build:quickapp": "taro build --type quickapp",
@@ -21,7 +21,7 @@
     "dev:swan": "npm run build:swan -- --watch",
     "dev:alipay": "npm run build:alipay -- --watch",
     "dev:tt": "npm run build:tt -- --watch",
-    "dev:h5": "npm run build:h5 -- --watch",
+    "dev:h5": "node ./config/h5-build-script.js && taro build --type h5 --watch",
     "dev:rn": "npm run build:rn -- --watch",
     "dev:qq": "npm run build:qq -- --watch",
     "dev:quickapp": "npm run build:quickapp -- --watch"
@@ -35,26 +35,28 @@
   "license": "MIT",
   "dependencies": {
     "@babel/runtime": "^7.7.7",
+    "@tarojs/components": "3.0.15",
     "@tarojs/runtime": "3.0.15",
     "@tarojs/taro": "3.0.15",
-    "@tarojs/components": "3.0.15",
-    "vuex": "^4.0.0-beta.4",
-    "vue": "^3.0.0"
+    "taro-ui": "^2.3.4",
+    "taro-ui-vue3": "^1.0.0-dev.1",
+    "vue": "^3.0.0",
+    "vuex": "^4.0.0-beta.4"
   },
   "devDependencies": {
-    "@types/webpack-env": "^1.13.6",
+    "@babel/core": "^7.8.0",
     "@tarojs/mini-runner": "3.0.15",
     "@tarojs/webpack-runner": "3.0.15",
-    "@babel/core": "^7.8.0",
-    "babel-preset-taro": "3.0.15",
-    "@vue/compiler-sfc": "^3.0.0",
-    "vue-loader": "^16.0.0-beta.8",
-    "eslint-plugin-vue": "^7.0.0",
-    "eslint-config-taro": "3.0.15",
-    "eslint": "^6.8.0",
-    "stylelint": "9.3.0",
-    "@typescript-eslint/parser": "^2.x",
+    "@types/webpack-env": "^1.13.6",
     "@typescript-eslint/eslint-plugin": "^2.x",
-    "typescript": "^3.7.0"
+    "@typescript-eslint/parser": "^2.x",
+    "@vue/compiler-sfc": "^3.0.0",
+    "babel-preset-taro": "3.0.15",
+    "eslint": "^6.8.0",
+    "eslint-config-taro": "3.0.15",
+    "eslint-plugin-vue": "^7.0.0",
+    "stylelint": "9.3.0",
+    "typescript": "^3.7.0",
+    "vue-loader": "^16.0.0-beta.8"
   }
 }

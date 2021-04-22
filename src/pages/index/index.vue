@@ -1,30 +1,43 @@
 <template>
-  <view class="index">
-    <NumberDisplay/>
-    <NumberSubmit/>
+  <view class="home">
+    <view class="home__timer">
+      <view class="home__timer__num">12 : 34</view>
+      <view class="home__timer__subtitle">创建记录</view>
+      <view class="home__timer__arrow">
+        <AtIcon value='chevron-right' size='24' color='#fff'></AtIcon>
+      </view>
+    </view>
+    <AtButton>记录</AtButton>
   </view>
 </template>
 
 <script>
-import NumberDisplay from '../../components/NumberDisplay.vue'
-import NumberSubmit from '../../components/NumberSubmit.vue'
+import {AtButton} from 'taro-ui-vue3'
 
 export default {
   name: 'Index',
   components: {
-    NumberDisplay,
-    NumberSubmit
+    AtButton
   }
 }
 </script>
 
 <style>
-.index {
+.home {
+  --timer-bg: #070417;
+  --default-color: #fff;
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  padding: 15px;
+}
+.home__timer {
+  padding: 22px 26px;
+  border-radius: 12px;
+  background-color: var(--timer-bg);
+}
+.home__timer__num {
+  font-size: 32px;
+  color: var(--default-color);
 }
 </style>
